@@ -1,0 +1,11 @@
+# Copy to android/key.properties and fill in the real values.
+# key.properties and the keystore must NEVER be committed or shared; keep the
+# keystore outside the project folder and back it up in two places.
+#
+# Create the upload keystore once (it asks for the passwords interactively):
+#   keytool -genkeypair -v -keystore C:\Users\<you>\keys\jibi\jibi-upload.jks \
+#     -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+storeFile=C:\\Users\\<you>\\keys\\jibi\\jibi-upload.jks
+storePassword=
+keyAlias=upload
+keyPassword=

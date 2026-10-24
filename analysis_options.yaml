@@ -1,0 +1,21 @@
+# Static analysis for Jibi (an Android-only Flutter app). Run: flutter analyze
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+
+linter:
+  rules:
+    # Private fields fed by public named parameters (`_x = x`) are the house
+    # style for the constructors that validate or copy their arguments.
+    prefer_initializing_formals: false
+    # A dropped Future hides failures: intentional fire-and-forget uses
+    # `unawaited(...)`.
+    unawaited_futures: true

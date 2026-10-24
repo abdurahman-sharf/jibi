@@ -1,0 +1,9 @@
+# Recovery-key derivation intentionally uses production-strength PBKDF2.
+timeout: 3m
+concurrency: 2
+
+tags:
+  # Wall-clock budgets on 20k-row data sets. They depend on the machine, so CI
+  # can skip them:  flutter test --exclude-tags perf
+  perf:
+    timeout: 5m

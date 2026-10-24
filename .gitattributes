@@ -1,0 +1,12 @@
+# One line ending (LF) in the repository and in working copies.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.zip binary
+*.jks binary
+*.keystore binary
+*.jibi binary

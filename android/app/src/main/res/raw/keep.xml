@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Keeps the notification (status-bar) icon and the launcher icon. The icon is
+     referenced by name from Dart, so resource shrinking in release builds
+     would otherwise drop it and silently break scheduled notifications. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/ic_stat_jibi,@mipmap/ic_launcher*" />

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shown while the app starts: light mint with the pocket. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/launch_background_color" />
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/splash_wallet" />
+    </item>
+</layer-list>

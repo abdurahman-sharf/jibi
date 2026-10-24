@@ -1,0 +1,64 @@
+name: jibi
+description: "جيبي — محفظة شخصية محلية وآمنة."
+# Not published to pub.dev; the app ships through Google Play.
+publish_to: 'none'
+
+# version: <name>+<build number>. Android takes versionName from the name and
+# versionCode from the build number, and Google Play needs a higher build
+# number for every upload. Keep lib/core/app_info.dart in step (a test checks).
+version: 1.18.0+25
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  flutter_secure_storage: ^10.0.0
+  cryptography: ^2.9.0
+  # Transparently routes package:cryptography's PBKDF2/AES-GCM/HMAC calls to
+  # native platform APIs on Android (and iOS/macOS) instead of pure Dart, when
+  # the platform supports it — same algorithm, same iterations, byte-identical
+  # output, just much faster. See PinVerifier / Kdf: this is what makes the
+  # 600k-iteration PIN check fast on a phone without weakening it. No code
+  # elsewhere needs to change: package:cryptography's Pbkdf2.hmacSha256(...)
+  # already resolves through Cryptography.instance, which this plugin replaces
+  # automatically (Flutter's own plugin registration; nothing to call in
+  # main()). On platforms it does not support (Windows, Linux, tests) nothing
+  # changes at all.
+  cryptography_flutter: ^2.3.4
+  local_auth: ^3.0.2
+  # Only for the Arabic wording of the Android fingerprint prompt.
+  local_auth_android: ^2.0.10
+  path_provider: ^2.1.6
+  uuid: ^4.6.0
+  sqflite: ^2.4.3
+  flutter_local_notifications: ^22.3.1
+  timezone: ^0.11.1
+  # Reports: PDF (with Arabic shaping/bidi) and the xlsx zip container.
+  pdf: ^3.11.3
+  archive: ^4.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  sqflite_common_ffi: ^2.3.6
+  # Reader-side checks of generated reports (xlsx parts).
+  xml: ^6.5.0
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    # Arabic font embedded in generated PDF reports (SIL OFL 1.1). The licence
+    # text ships with it.
+    - assets/fonts/Tajawal-Regular.ttf
+    - assets/fonts/Tajawal-Bold.ttf
+    - assets/fonts/OFL-Tajawal.txt
+    # The app icon (a pocket), also shown on the welcome and lock screens.
+    - assets/images/app_icon.png

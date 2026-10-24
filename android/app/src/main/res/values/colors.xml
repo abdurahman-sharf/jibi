@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light mint behind the launch picture and the launcher icon: the black
+         pocket stands out on it. Same tone as ic_launcher_background.xml and
+         the tile colours in tool/make_app_icons.py. -->
+    <color name="launch_background_color">#D0E6DC</color>
+</resources>
